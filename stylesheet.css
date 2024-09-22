@@ -1,0 +1,14 @@
+/* Add your custom extension styling here */
+.twingate_on {
+    background-image: url("icons/twingate_on.png");
+    background-size: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.twingate_off {
+    background-image: url("icons/twingate_off.png");
+    background-size: 20px;
+    height: 20px;
+    width: 20px;
+}

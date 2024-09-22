@@ -1,0 +1,30 @@
+name: Upload release assets
+
+permissions:
+  contents: write
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build-deb:
+    name: Create zip for publishing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - name: Create zip
+        run: |
+          zip -r ../twingate-status-gnome@eudes.es.zip icons/ extension.js metadata.json stylesheet.css LICENSE
+          cd ..
+
+      - name: Upload package
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./twingate-status-gnome@eudes.es.zip
+          asset_name: twingate-status-gnome@eudes.es.zip
+          tag: ${{ github.ref }}
