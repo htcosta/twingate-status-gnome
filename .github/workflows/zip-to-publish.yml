@@ -18,12 +18,12 @@ jobs:
 
       - name: Create zip
         run: |
-          zip -r twingate-status-gnome@eudes.es.zip icons/ extension.js metadata.json stylesheet.css LICENSE
+          zip -r twingate-status@eudes.es.zip icons/ extension.js metadata.json stylesheet.css LICENSE
 
       - name: Upload package
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./twingate-status-gnome@eudes.es.zip
-          asset_name: twingate-status-gnome@eudes.es.zip
+          file: ./twingate-status@eudes.es.zip
+          asset_name: twingate-status@eudes.es.zip
           tag: ${{ github.ref }}
