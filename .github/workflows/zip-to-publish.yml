@@ -18,8 +18,7 @@ jobs:
 
       - name: Create zip
         run: |
-          zip -r ../twingate-status-gnome@eudes.es.zip icons/ extension.js metadata.json stylesheet.css LICENSE
-          cd ..
+          zip -r twingate-status-gnome@eudes.es.zip icons/ extension.js metadata.json stylesheet.css LICENSE
 
       - name: Upload package
         uses: svenstaro/upload-release-action@v2
